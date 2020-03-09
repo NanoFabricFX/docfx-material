@@ -5,7 +5,7 @@ override of the default template so you need to enable both in the `docfx.json`.
 
 The colors were chosen using <https://material.io/tools/color>.
 
-![DocFX Material Site](./docs/images/material-site.png)
+![DocFX Material Site](./images/material-site.png)
 
 ## Install
 
@@ -36,4 +36,36 @@ the following variables in the `material/styles/main.css` file.
   --highlight-dark: #003c8f;
   --font-color: #34393e;
 }
+```
+
+## Markdown extras
+
+For more reference about markdown support in DocFX check the
+[official documentation.](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html?tabs=tabid-1%2Ctabid-a#note-warningtipimportant) 
+
+> [!NOTE]
+> This is a note which needs your attention, but it's not super important.
+>
+> [!WARNING]
+> This is a warning containing some important message.
+>
+> [!CAUTION]
+> This is a warning containing some **very** important message.
+
+## DocFX tips
+
+### Enable search
+
+To enable search in DocFX it's not enough to set the configuration parameter to `true`:
+
+```json
+"globalMetadata": {
+    "_enableSearch": "true"
+}
+```
+
+You also have to indicate in the `docfx.json` the post processor that generates the index for the searches:
+
+```json
+"postProcessors": ["ExtractSearchIndex"],
 ```
